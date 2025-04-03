@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Algorithm Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Matrix Algorithm Analyzer</h1>
+            <p>Compare Divide-and-Conquer vs. Strassen Algorithms</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="control-panel">
+            <form id="matrixForm">
+                <input type="number" id="size" name="size" min="2" required 
+                       placeholder="Enter matrix size (n)">
+                <button type="submit">Analyze Performance</button>
+            </form>
+        </div>
+
+        <div id="results">
+            <div class="matrix-container">
+                <div class="matrix-box">
+                    <h3>Matrix 1</h3>
+                    <pre id="matrix1"></pre>
+                </div>
+                <div class="matrix-box">
+                    <h3>Matrix 2</h3>
+                    <pre id="matrix2"></pre>
+                </div>
+            </div>
+
+            <h3>Performance Comparison</h3>
+            <canvas id="timeChart"></canvas>
+
+            <div id="correctness"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
